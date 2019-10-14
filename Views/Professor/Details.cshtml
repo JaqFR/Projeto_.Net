@@ -1,0 +1,95 @@
+﻿@model Aula_MVC.Models.Professor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Dados do Professor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TwitterBlog)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TwitterBlog)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Materia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Materia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Disponivel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Disponivel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Admissao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Admissao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDProfessor }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+<fieldset>
+    <legend>Alunos do Professor</legend>
+    <ul>
+        @foreach (var aluno in Model.Alunos)
+            {
+                <li>@aluno.NomeAluno</li>
+            }
+    </ul>
+</fieldset>
+
+<fieldset>
+    <legend>Topicos do professor</legend>
+    <ul>
+        new { id = Model.IDProfessor }
+        @foreach (var topico in Model.Topicos)
+        {
+            <li>@topico.Descricao</li>
+        }
+    </ul>
+</fieldset>
