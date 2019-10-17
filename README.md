@@ -1,2 +1,3 @@
 # Projeto_.Net
-Exemplo MVC para controle de alunos e disciplinas dos professores
+Exemplo MVC
+Controle de alunos e disciplinas dos professores
